@@ -10,6 +10,11 @@ namespace VkBrackets;
 
 use VkBrackets\Exception\BracketsCheckError;
 
+/**
+ * @property-read $str: string
+ * @property-read $result: boolean
+ * @property-read $error: string
+*/
 class BracketsChecker
 {
 
@@ -37,13 +42,13 @@ class BracketsChecker
                         break;
                     case ')':
                         $open_brackets--;
-                        if ($open_brackets < 0) throw new BracketsCheckError("Некорректное закрытие скобок в позиции $i");
+                        if ($open_brackets < 0) throw new BracketsCheckError("Incorrect closing braces in position $i");
                         break;
                     default:
-                        throw new \InvalidArgumentException("Некорректный символ в позиции $i: {$str[$i]}");
+                        throw new \InvalidArgumentException("Invalid character at position $i: {$str[$i]}");
                 }
             }
-            if ($open_brackets != 0) throw new BracketsCheckError("Не закрыто $open_brackets скобок");
+            if ($open_brackets != 0) throw new BracketsCheckError("Not closed $open_brackets brackets");
             $this->result = true;
         } catch (BracketsCheckError $e) {
             $this->result = false;
@@ -61,7 +66,7 @@ class BracketsChecker
             case 'error': return $this->error;
                 break;
         }
-        throw new \Exception('Неизвестное свойство '.$name);
+        throw new \Exception('Unacceptable property '.$name);
     }
 
 }
