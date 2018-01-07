@@ -20,7 +20,7 @@ InvalidArgumentException.
 
 ## Установка
 
-    composer require 
+    composer require vkhs/brackets 
 
 ## Использование
 
