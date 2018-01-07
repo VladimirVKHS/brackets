@@ -3,6 +3,7 @@
     "description": "Проверка скобок в строке",
     "type": "library",
     "license": "MIT",
+    "stability":"stable",
     "authors": [
         {
             "name": "Vladimir",
