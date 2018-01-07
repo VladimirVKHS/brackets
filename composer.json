@@ -1,0 +1,21 @@
+{
+    "name": "vkhs/brackets",
+    "description": "Проверка скобок в строке",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vladimir",
+            "email": "kovalev.home@mail.ru"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "VkBrackets\\": "src/"
+        }
+    }
+}
