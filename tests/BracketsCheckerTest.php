@@ -23,13 +23,13 @@ class BracketsCheckerTest extends TestCase
 
     public function test1()
     {
-        $str = '(()(\n)\t\r())';
+        $str = "(()(\n)\t\r())";
         $this->assertTrue($this->myRunTest($str));
     }
 
     public function test2()
     {
-        $str = '((()(\n)\t\r())';
+        $str = "((()(\n)\t\r())";
         $this->assertFalse($this->myRunTest($str));
     }
 
