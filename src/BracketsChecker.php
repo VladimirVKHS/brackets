@@ -58,7 +58,7 @@ class BracketsChecker
             $this->result = false;
             $this->error = $e->getMessage();
         }
-        return $this->result;
+        return $this;
     }
 
     public function __get($name)

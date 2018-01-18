@@ -15,7 +15,7 @@ class BracketsCheckerTest extends TestCase
     private function myRunTest($str)
     {
         try {
-            return (new BracketsChecker($str))->check();
+            return (new BracketsChecker($str))->check()->result;
         } catch (\InvalidArgumentException $e) {
             return false;
         }
