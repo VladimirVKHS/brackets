@@ -28,10 +28,14 @@ class BracketsChecker
      */
     public function __construct(string $str)
     {
+        $this->str = $str;
+    }
+
+    public function check()
+    {
         try {
-            $this->str = $str;
             // Убираем из строки разрешённые символы за исключением скобок
-            $str = str_replace([' ', "\n", "\t", "\r"], '', $str);
+            $str = str_replace([' ', "\n", "\t", "\r"], '', $this->str);
             //Проверяем правильность открытия и закрытия скобок, наличие запрещённых символов
             $open_brackets = 0;
             for($i=0;$i<strlen($str);$i++)
@@ -54,6 +58,7 @@ class BracketsChecker
             $this->result = false;
             $this->error = $e->getMessage();
         }
+        return $this->result;
     }
 
     public function __get($name)

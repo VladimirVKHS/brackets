@@ -15,25 +15,25 @@ class BracketsCheckerTest extends TestCase
     private function myRunTest($str)
     {
         try {
-            return (new BracketsChecker($str))->result;
+            return (new BracketsChecker($str))->check();
         } catch (\InvalidArgumentException $e) {
             return false;
         }
     }
 
-    public function test1()
+    public function testValid()
     {
         $str = "(()(\n)\t\r())";
         $this->assertTrue($this->myRunTest($str));
     }
 
-    public function test2()
+    public function testInvalid()
     {
         $str = "((()(\n)\t\r())";
         $this->assertFalse($this->myRunTest($str));
     }
 
-    public function test3()
+    public function testValidMultiline()
     {
         $str = "(()(\n)\t\r())()
         
@@ -46,7 +46,7 @@ class BracketsCheckerTest extends TestCase
         $this->assertTrue($this->myRunTest($str));
     }
 
-    public function test4()
+    public function testInvalidMultiline()
     {
         $str = "(()(\n)\t\r())
         

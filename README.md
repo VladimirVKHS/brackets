@@ -25,8 +25,8 @@ InvalidArgumentException.
 ## Использование
 
     use VkBrackets\BracketsChecker;      
-    $str = "(()()())\n \t()"
-    $checker = new BracketsChecker($str);
+    $str = "(()()())\n \t()";
+    $checker = (new BracketsChecker($str))->check();
     $result = $checker->result;
     $error = $checker->error;
     $str = $checker->str;
